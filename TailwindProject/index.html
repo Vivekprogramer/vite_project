@@ -6,21 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
     <style>
+      html, body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        background-color: #181818; /* Dark background */
+      }
       .center-top {
         position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        top: 18px;
+        left: 32px;
         background-color: red;
-        color: white;
+        color: #181818; /* Changed from white to dark */
         margin: 0;
-        padding: 16px 0;
-        width: 100%;
-        text-align: center;
+        padding: 8px 20px;
+        width: auto;
+        text-align: left;
         font-family: 'Roboto', Arial, sans-serif;
         font-size: 2.5rem;
         font-weight: bold;
-        z-index: 2;
+        z-index: 20;
+        border-radius: 8px;
       }
       .buffering-container {
         position: absolute;
@@ -45,7 +51,7 @@
       }
       .buffering-text {
         margin-top: 18px;
-        color: #db3434;
+        color: #ff0000; /* Changed from white to dark */
         font-size: 1.1rem;
         font-family: Arial, sans-serif;
         text-align: center;
@@ -55,13 +61,72 @@
         0% { transform: rotate(0deg);}
         100% { transform: rotate(360deg);}
       }
+      .top-right-icons {
+        position: absolute;
+        top: 18px;
+        right: 32px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        z-index: 10;
+      }
+      .top-center-search {
+        position: absolute;
+        top: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        z-index: 15;
+      }
+      .search-input {
+        padding: 6px 10px;
+        border-radius: 20px;
+        border: 1px solid #444;
+        font-size: 1rem;
+        outline: none;
+        width: 500px; /* Increased width */
+        background: #181818; /* Changed from white to dark */
+        color: #fff;
+      }
+      .icon-btn {
+        background: #222;
+        border: 1px solid #444;
+        cursor: pointer;
+        font-size: 1.3rem;
+        padding: 6px;
+        transition: background 0.2s;
+        border-radius: 50%;
+        color: #181818; /* Changed from white to dark */
+      }
+      .icon-btn:hover {
+        background: #333;
+      }
+      .main-header {
+        width: 100%;
+        position: relative;
+        height: 80px;
+      }
     </style>
   </head>
   <body>
-    <h1 class="center-top">YourTube</h1>
+    <header class="main-header">
+      <h1 class="center-top">YourTube</h1>
+      <div class="top-center-search">
+        <input type="text" class="search-input" placeholder="Search" />
+      </div>
+      <div class="top-right-icons">
+        <button class="circular style-scope yt-icon-button" title="Notifications"></button>
+        <button class="icon-btn" title="Profile">
+          <span style="font-size: 1.3rem;">👤</span>
+        </button>
+      </div>
+    </header>
+    <hr>
     <div class="buffering-container">
       <div class="spinner"></div>
-      <span class="buffering-text">Wait while it's buffering</span>
+      <span class="buffering-text">Check your Connection</span>
     </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
