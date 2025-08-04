@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+    <style>
+      .center-top {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: red;
+        color: white;
+        margin: 0;
+        padding: 16px 0;
+        width: 100%;
+        text-align: center;
+        font-family: 'Roboto', Arial, sans-serif;
+        font-size: 2.5rem;
+        font-weight: bold;
+        z-index: 2;
+      }
+      .buffering-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 140px;
+        height: 140px;
+        z-index: 1;
+      }
+      .spinner {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #db3434;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
+      }
+      .buffering-text {
+        margin-top: 18px;
+        color: #db3434;
+        font-size: 1.1rem;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        letter-spacing: 1px;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg);}
+        100% { transform: rotate(360deg);}
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="center-top">YourTube</h1>
+    <div class="buffering-container">
+      <div class="spinner"></div>
+      <span class="buffering-text">Wait while it's buffering</span>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
