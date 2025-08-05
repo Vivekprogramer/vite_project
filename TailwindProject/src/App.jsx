@@ -9,11 +9,8 @@ function App() {
   return (
     <>
      <div>
-      <h1 className='bg-violet-600'>Hello World I Am Vivek Kumar Singh</h1>
+      <h1 className='bg-green-900 text-white'>Hello YourTubers, I Am Vivek Kumar Singh. CEO& Co-Founder of YourTube</h1>
      </div>
-     <br />
-     <br />
-     <div className='animate-bounce text-7xl'>⚽</div>
     </>
   )
 }
